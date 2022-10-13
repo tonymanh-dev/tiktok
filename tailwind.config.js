@@ -3,8 +3,50 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  // darkMode: 'class',
   theme: {
+
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#fe2c55'
+        },
+      },
+      textColor: {
+        primary: {
+          light: '#ffff',
+          DEFAULT: '#fe2c55',
+          dark: '#04111d',
+        },
+        secondary: {
+          light: '#e5e8eb',
+          dark: '#353840',
+        },
+        muted: {
+          light: '#8a939b',
+          dark: '#707a83',
+        },
+      },
+  
+      backgroundColor: {
+        primary: {
+          dark: '#000',
+          DEFAULT: '#fe2c55',
+          light: '#fff',
+        },
+        secondary: {
+          dark: '#181818',
+          DEFAULT: 'rgba(254, 44, 85, 0.05)',
+          light: '#f3f4f6',
+        },
+      },
+  
+      screens: {
+        sm: '600px',
+        md: '786px',
+        lg: '1024px',
+        xl: '1280px',
+      },
       width: {
         1600: '1600px',
         400: '400px',
@@ -23,13 +65,9 @@ module.exports = {
       top: {
         ' 50%': '50%',
       },
-      backgroundColor: {
-        primary: '#F1F1F2',
-        blur: '#030303',
-      },
-      colors: {
-        primary: 'rgb(22, 24, 35)',
-      },
+
+    
+
       height: {
         '88vh': '88vh',
       },
