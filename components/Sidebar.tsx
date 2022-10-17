@@ -16,7 +16,6 @@ const normalLink =
 
 const Sidebar = () => {
   const [isSidebar, setIsSidebar] = useState(true)
-  const user = false
   const { pathname } = useRouter()
 
   return (
@@ -39,7 +38,7 @@ const Sidebar = () => {
               </div>
             </Link>
           </div>
-          {!user && (
+          {/* {!user && (
             <div className="px-2 py-4 hidden lg:block">
               <p>Log in to like and comment on videos</p>
               <div className="pr-4">
@@ -60,7 +59,7 @@ const Sidebar = () => {
                 />
               </div>
             </div>
-          )}
+          )} */}
 
           <Discover />
           <SuggestedAccounts />

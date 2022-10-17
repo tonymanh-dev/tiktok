@@ -14,8 +14,6 @@ const Discover = () => {
   const router = useRouter()
   const { topic } = router.query
 
-  console.log(topic)
-
   return (
     <div className="lg:border-b lg:border-neutral-800 pb-6 px-2">
       <p className="hidden lg:block mt-4 text-md">Popular Topics</p>
