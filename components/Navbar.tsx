@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -9,12 +9,17 @@ import { BiSearch } from 'react-icons/bi'
 import { IoMdAdd } from 'react-icons/io'
 import { createOrGetUser } from '../utils'
 import useAuthStore from '../store/authStore'
+import { IUser } from '../types'
 
 import logo from '../utils/logo.svg'
 
 const Navbar = () => {
-  const user = false
+  const [user, setUser] = useState<IUser | null>()
   const { userProfile, addUser, removeUser } = useAuthStore()
+
+  useEffect(() => {
+    setUser(userProfile)
+  }, [userProfile])
 
   return (
     <div className="w-full flex justify-between items-center border-b border-neutral-800 py-2 px-4">
@@ -32,7 +37,7 @@ const Navbar = () => {
       <div>Search</div>
 
       <div>
-        {userProfile ? (
+        {user ? (
           <div className="flex gap-5 md:gap-10">
             <Link href="/upload">
               <button className="flex items-center justify-between gap-1 py-2 px-4 border border-neutral-800 rounded-full cursor-pointer hover:bg-secondary">
@@ -41,13 +46,13 @@ const Navbar = () => {
               </button>
             </Link>
 
-            {userProfile.image && (
+            {user?.image && (
               <Link href="/">
                 <Image
                   alt=""
                   width={40}
                   height={40}
-                  src={userProfile.image}
+                  src={user?.image}
                   className="rounded-full"
                 />
               </Link>
